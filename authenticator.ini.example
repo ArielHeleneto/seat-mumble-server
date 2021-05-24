@@ -1,0 +1,43 @@
+;Database configuration
+[database]
+;Only tested with MySQL at the moment
+lib        = MySQLdb
+name       = seat
+user       = seat
+password   = password
+prefix     = 
+host       = 127.0.0.1
+port       = 3306
+
+;Player configuration
+[user]
+;If you do not already know what it is just leave it as it is
+id_offset       = 1000000000
+;Reject users if the authenticator experiences an internal error during authentication
+reject_on_error = True
+;If enabled, textures are automatically set as player's EvE avatar for use on overlay.
+avatar_enable = False
+;Get EvE avatar images from this location. {charid} will be filled in.
+ccp_avatar_url = https://images.evetech.net/characters/{charid}/portrait?size=32
+
+;Ice configuration
+[ice]
+host            = 127.0.0.1
+port            = 6502
+slice           = Murmur.ice
+secret          =
+watchdog        = 30
+
+;Murmur configuration
+[murmur]
+;List of virtual server IDs
+servers      = 1
+
+;Logging configuration
+[log]
+; Available loglevels: 10 = DEBUG (default) | 20 = INFO | 30 = WARNING | 40 = ERROR
+level   =
+file    = authenticator.log
+
+[iceraw]
+Ice.ThreadPool.Server.Size = 5
